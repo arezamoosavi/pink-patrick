@@ -4,11 +4,9 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./dockers/app/Dockerfile
+      dockerfile: ./container/app/Dockerfile
     env_file:
       - ./.envs/.main_envs
-    depends_on:
-      - redis
     volumes:
       - ./src:/main
     restart: unless-stopped

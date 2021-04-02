@@ -16,6 +16,9 @@ RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt && \
     rm -rf requirements.txt
 
+COPY container/app/run.sh run.sh
+RUN chmod a+rx run.sh
+
 RUN mkdir -p /main
 COPY ./src /main
 
