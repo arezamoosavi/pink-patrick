@@ -1,0 +1,1 @@
+# this script is presto job from mysql to mongodb

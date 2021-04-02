@@ -6,7 +6,7 @@ import tweepy
 from tweepy.streaming import StreamListener
 from models import insert_json_data
 
-key_words = ["human", "rights"]
+key_words = ["covid19", "vaccine", "pfizer"]
 
 
 def get_twitter_api(settings):

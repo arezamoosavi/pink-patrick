@@ -8,9 +8,6 @@ mongo==0.2.0
 presto-python-client==0.7.0
 pyhive==0.6.3
 graphviz==0.16
-thrift-sasl==0.4.2
-thrift==0.13.0
-sasl==0.2.1
 
 tweepy==3.10.0
 python-dateutil
