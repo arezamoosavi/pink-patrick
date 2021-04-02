@@ -9,9 +9,10 @@ RUN apt-get update -y && apt-get install -y libzbar-dev bash gcc git libc-dev cu
     && apt-get clean
 
 #Project
-RUN apt-get update -y && apt-get install -qy graphviz libmysqlclient-dev mongodb-clients mysql-client wget host
+RUN apt-get update -y && apt-get install -qy graphviz \
+    default-libmysqlclient-dev mongodb-clients mysql-client wget host
 
-COPY container/requirements.txt requirements.txt
+COPY container/app/requirements.txt requirements.txt
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt && \
     rm -rf requirements.txt
