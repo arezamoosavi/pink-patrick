@@ -1,6 +1,19 @@
 version: "3"
 
 services:
+  app:
+    build:
+      context: .
+      dockerfile: ./dockers/app/Dockerfile
+    env_file:
+      - ./.envs/.main_envs
+    depends_on:
+      - redis
+    volumes:
+      - ./src:/main
+    restart: unless-stopped
+    # command: sh /run.sh
+    command: sleep infinity
   presto:
     build:
       context: .
