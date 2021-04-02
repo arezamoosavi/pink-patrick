@@ -6,7 +6,7 @@ set -o nounset
 
 echo twitter stream started . . .
 
-timeout 1m python twitter_app.twitter_stream.py
+timeout 1m python twitter_app/twitter_stream.py
 
 echo twitter stream finished
 sleep 3

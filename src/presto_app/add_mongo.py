@@ -2,12 +2,18 @@
 
 import prestodb.dbapi as presto
 
-# conn = presto.Connection(host="presto", port=8080, user="demo")
-conn = presto.Connection(
-    host="presto", port=8080, user="demo", catalog="tcph", schema="sf10"
-)
+# conn = presto.Connection(host="presto", port=8080, user="alireza")
+# conn = presto.Connection(
+#     host="presto", port=8080, user="alireza", catalog="tcph", schema="sf10"
+# )
 
-cur = conn.cursor()
+with presto.Connection(
+    host="presto", port=8080, user="alireza", catalog="tcph", schema="sf10"
+) as conn:
 
-cur.execute("CREATE TABLE mongodb.presto.tweets AS SELECT * FROM mysql.maindb.tweets")
+    cur = conn.cursor()
+
+    cur.execute(
+        "CREATE TABLE mongodb.presto.tweets AS SELECT * FROM mysql.maindb.tweets"
+    )
 
