@@ -14,6 +14,7 @@ sleep 3
 echo presto job is started . . .
 echo presto job from mysql to mongodb . . .
 
+python presto_app/add_mongo.py
 
 echo is finished
 echo presto job from mysql to hive . . .

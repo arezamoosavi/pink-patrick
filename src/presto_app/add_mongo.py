@@ -14,6 +14,6 @@ with presto.Connection(
     cur = conn.cursor()
 
     cur.execute(
-        "CREATE TABLE mongodb.presto.tweets AS SELECT * FROM mysql.maindb.tweets"
+        "CREATE TABLE mongodb.admin.tweets AS SELECT * FROM mysql.maindb.tweets"
     )
 
