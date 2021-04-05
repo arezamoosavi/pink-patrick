@@ -1,3 +1,4 @@
+import os
 import sqlalchemy
 
 from sqlalchemy import inspect
@@ -6,9 +7,16 @@ from sqlalchemy import Table, Column, Integer, BigInteger, DateTime, MetaData, T
 
 from sqlalchemy.sql import text
 
+
+SQL_HOST = os.getenv("SQL_HOST")
+SQL_PORT = int(os.getenv("SQL_PORT"))
+SQL_USER = os.getenv("SQL_USER")
+SQL_PASS = os.getenv("SQL_PASS")
+SQL_DB = os.getenv("SQL_DB")
+
 engine = create_engine(
     "mysql+mysqldb://{0}:{1}@{2}:{3}/{4}?charset=utf8mb4".format(
-        "mainuser", "mainpass", "mysql", 3306, "maindb"
+        SQL_USER, SQL_PASS, SQL_HOST, SQL_PORT, SQL_DB
     )
 )
 

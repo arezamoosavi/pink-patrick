@@ -7,13 +7,11 @@ import prestodb.dbapi as presto
 #     host="presto", port=8080, user="alireza", catalog="tcph", schema="sf10"
 # )
 
-with presto.Connection(
-    host="presto", port=8080, user="alireza", catalog="tcph", schema="sf10"
-) as conn:
+with presto.Connection(host="presto", port=8080, user="alireza") as conn:
 
     cur = conn.cursor()
 
     cur.execute(
         "CREATE TABLE mongodb.admin.tweets AS SELECT * FROM mysql.maindb.tweets"
     )
-
+    cur.fetchall()
